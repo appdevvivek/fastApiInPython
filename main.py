@@ -5,15 +5,15 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from bson import ObjectId
 
 # MongoDB Connection
-MONGO_URL = "mongodb://localhost:27017"
+# MONGO_URL = "mongodb://localhost:27017"
+MONGO_URL="mongodb+srv://vivekkushwah011:<db_password>@cluster0.xh2b4.mongodb.net/"
 client = AsyncIOMotorClient(MONGO_URL)
-db = client["FastApi"]  # Replace with your DB name
-collection = db["testCollection"]
+db = client["FastApi"]  # Use the FastApi database
+collection = db["login"]  # Connect to the login collection
 
 # Create FastAPI instance
 app = FastAPI()
 
-print(client["FastApi"])
 # Define the Item model for request body
 class Item(BaseModel):
     name: str
